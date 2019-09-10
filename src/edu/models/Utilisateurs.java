@@ -10,8 +10,8 @@ public class Utilisateurs {
 	private int age;
 	private List<Groupe> groupes;
 	private List<Connexion> connexions;
-	private List<Preference>preferences;
-
+	
+	private Preferences prefs;
 
 	// Constructeur de l'utilisateur.
 	public Utilisateurs(String login/*,int age, String password*/) {
@@ -21,7 +21,7 @@ public class Utilisateurs {
 		this.password = password;
 		connexions=new ArrayList<>();*/
 		groupes= new ArrayList<>();
-		preferences=Preference.getDefault();
+		prefs=Preferences.getDefaut();
 	}
 	
 	/** Méthode post connexion de l'utilisateur sur l'application. 
@@ -73,7 +73,7 @@ public class Utilisateurs {
 	
 	@Override
 	public String toString() {
-		return this.login+connexions;
+		return this.login+connexions+groupes+prefs;
 		
 	}
 	
